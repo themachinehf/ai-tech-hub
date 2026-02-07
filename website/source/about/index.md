@@ -32,7 +32,14 @@ Our content covers:
 - FastAPI, Flask, and Node.js
 - AWS, Vercel, and deployment platforms
 
-## Contact
+## Quick Links
+
+- [📚 Tutorials](/categories/)
+- [🏷️ Tags](/tags/)
+- [🔍 Search](/search/)
+- [📧 Contact](/contact/)
+
+## Connect With Us
 
 - GitHub: [github.com/ai-tech-hub](https://github.com/ai-tech-hub)
 - Email: contact@ai-tech-hub.example.com

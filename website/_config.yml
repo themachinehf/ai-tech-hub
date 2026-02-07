@@ -84,6 +84,12 @@ pagination_dir: page
 theme: butterfly
 exclude_generator:
 
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+  rel: true
+
 # Deployment
 deploy:
   type: git

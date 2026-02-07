@@ -28,6 +28,20 @@ Your premier destination for **AI tutorials**, **programming guides**, and **tec
 - Voice AI and speech recognition
 - AI agent development
 
+## Quick Links
+
+- **[📁 Categories](/categories/)** - Browse by topic
+- **[🏷️ Tags](/tags/)** - Find specific subjects
+- **[📧 Contact](/contact/)** - Get in touch
+
+## Search
+
+Use our archives or search function to find specific topics.
+
+## Subscribe
+
+Stay updated with the latest AI technology trends!
+
 ## Latest Articles
 
 Check out our [Archives](/archives) for all articles.
