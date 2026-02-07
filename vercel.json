@@ -1,54 +1,9 @@
 {
   "name": "aicontentsite",
   "version": 2,
-  "buildCommand": "cd website && npm install && npx hexo generate",
-  "outputDirectory": "public",
   "framework": null,
+  "buildCommand": "cd website && npm install && npx hexo generate",
+  "outputDirectory": "website/public",
   "installCommand": "cd website && npm install --registry=https://registry.npmmirror.com",
-  "devCommand": "cd website && npm run dev",
-  "github": {
-    "enabled": true,
-    "silent": false
-  },
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/archives",
-      "destination": "/archives/",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/:year/:month/:day/:slug",
-      "destination": "/:slug"
-    }
-  ]
+  "devCommand": "cd website && npm run dev"
 }
