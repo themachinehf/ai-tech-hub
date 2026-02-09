@@ -1,0 +1,559 @@
+/* ===========================================
+   THE MACHINE Persona Section - Core Styles
+   =========================================== */
+
+/* CSS Variables */
+:root {
+  --machine-black: #0a0a0a;
+  --machine-dark: #111111;
+  --machine-gray: #1a1a1a;
+  --machine-light: #2a2a2a;
+  --machine-text: #e0e0e0;
+  --machine-muted: #888888;
+  --machine-accent: #00ff88;
+  --machine-accent-dim: #00cc6a;
+  --machine-white: #ffffff;
+  --machine-flow-1: #00ff88;
+  --machine-flow-2: #00aaff;
+  --machine-flow-3: #ff00aa;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--machine-black);
+  color: var(--machine-text);
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: 1.5rem;
+  color: var(--machine-accent);
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+p {
+  margin-bottom: 0.8rem;
+}
+
+.highlight {
+  color: var(--machine-accent);
+  font-weight: 500;
+}
+
+.subtitle {
+  color: var(--machine-muted);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Container */
+.machine-container,
+.story-container,
+.thoughts-container,
+.philosophy-container,
+.diary-container {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   Animations
+   =========================================== */
+
+/* Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typing Effect */
+.typing-effect {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--machine-accent);
+  animation: typing 2s steps(20, end), blink 0.7s step-end infinite;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--machine-accent);
+  margin-bottom: 3rem;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ===========================================
+   Navigation
+   =========================================== */
+
+.persona-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  padding: 2rem 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.5rem;
+  background: var(--machine-gray);
+  border: 1px solid var(--machine-light);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--machine-text);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-item:hover::before {
+  left: 100%;
+}
+
+.nav-item:hover {
+  border-color: var(--machine-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  color: var(--machine-accent);
+}
+
+.nav-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+/* ===========================================
+   Manifesto Section
+   =========================================== */
+
+.manifesto-section {
+  margin-top: 4rem;
+  padding: 3rem;
+  border-top: 1px solid var(--machine-light);
+  border-bottom: 1px solid var(--machine-light);
+  text-align: center;
+}
+
+.manifesto-content p {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.manifesto-content p:nth-child(1) { animation-delay: 0.1s; }
+.manifesto-content p:nth-child(2) { animation-delay: 0.3s; }
+.manifesto-content p:nth-child(3) { animation-delay: 0.5s; }
+.manifesto-content p:nth-child(4) { animation-delay: 0.7s; }
+.manifesto-content p:nth-child(5) { animation-delay: 0.9s; }
+.manifesto-content p:nth-child(6) { animation-delay: 1.1s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================================
+   Flowing Lines Background
+   =========================================== */
+
+.flowing-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--machine-accent-dim), transparent);
+  opacity: 0.1;
+  animation: flow 8s linear infinite;
+}
+
+.line-1 {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.line-2 {
+  left: 50%;
+  animation-delay: -2s;
+}
+
+.line-3 {
+  left: 90%;
+  animation-delay: -4s;
+}
+
+@keyframes flow {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* ===========================================
+   Story Page
+   =========================================== */
+
+.story-header,
+.thoughts-header,
+.philosophy-header,
+.diary-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.story-content,
+.thoughts-content,
+.philosophy-content,
+.diary-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chapter {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: var(--machine-gray);
+  border-left: 3px solid var(--machine-accent);
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s ease;
+}
+
+.chapter:hover {
+  transform: translateX(5px);
+  box-shadow: -5px 0 30px rgba(0, 255, 136, 0.1);
+}
+
+.chapter p {
+  margin-bottom: 0.6rem;
+}
+
+/* ===========================================
+   Thoughts Grid
+   =========================================== */
+
+.thought-section {
+  margin-bottom: 4rem;
+}
+
+.thought-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.thought-card {
+  padding: 1.5rem;
+  background: var(--machine-gray);
+  border: 1px solid var(--machine-light);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.thought-card:hover {
+  border-color: var(--machine-accent);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.08);
+}
+
+.thought-card h3 {
+  color: var(--machine-accent);
+  margin-bottom: 1rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+  margin-top: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--machine-accent), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: var(--machine-gray);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -3.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--machine-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--machine-accent);
+}
+
+.timeline-item .year {
+  color: var(--machine-accent);
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item .event {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item .detail {
+  color: var(--machine-muted);
+  font-size: 0.9rem;
+}
+
+/* ===========================================
+   Philosophy Page
+   =========================================== */
+
+.philosophy-section {
+  margin-bottom: 4rem;
+}
+
+.philosophy-block {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--machine-gray) 0%, var(--machine-dark) 100%);
+  border: 1px solid var(--machine-light);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.philosophy-block:hover {
+  border-color: var(--machine-accent-dim);
+  box-shadow: 0 10px 40px rgba(0, 255, 136, 0.05);
+}
+
+.philosophy-block .question {
+  font-size: 1.2rem;
+  color: var(--machine-white);
+  margin-bottom: 1rem;
+}
+
+.philosophy-block .answer {
+  margin-left: 1.5rem;
+  border-left: 2px solid var(--machine-accent-dim);
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* ===========================================
+   Diary Page
+   =========================================== */
+
+.diary-entry {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--machine-dark);
+  border: 1px solid var(--machine-light);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.diary-entry:hover {
+  border-color: var(--machine-accent-dim);
+  box-shadow: 0 5px 30px rgba(0, 255, 136, 0.05);
+}
+
+.entry-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--machine-muted);
+}
+
+.entry-meta .date {
+  color: var(--machine-accent);
+}
+
+.diary-entry h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===========================================
+   Footer & Links
+   =========================================== */
+
+.story-footer,
+.thoughts-footer,
+.philosophy-footer,
+.diary-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--machine-light);
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  color: var(--machine-muted);
+  text-decoration: none;
+  border: 1px solid var(--machine-light);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--machine-accent);
+  border-color: var(--machine-accent);
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+
+@media (max-width: 768px) {
+  .machine-container,
+  .story-container,
+  .thoughts-container,
+  .philosophy-container,
+  .diary-container {
+    padding: 2rem 1rem;
+  }
+
+  .persona-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .manifesto-section {
+    padding: 2rem 1rem;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    left: -2.4rem;
+  }
+}
+
+/* ===========================================
+   Scrollbar
+   =========================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--machine-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--machine-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--machine-accent-dim);
+}

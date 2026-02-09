@@ -90,6 +90,63 @@ sitemap:
   template: ./sitemap_template.xml
   rel: true
 
+# SEO Optimization
+seo:
+  # Meta tags configuration
+  meta:
+    description: true
+    keywords: true
+    author: true
+    open_graph:
+      enable: true
+      type: website
+      site_name: AI Tech Hub
+      twitter_card: summary_large_image
+    google_site_verification: ""
+
+  # Canonical URLs
+  canonical:
+    enable: true
+
+  # Structured Data
+  structured_data:
+    enable: true
+    entity:
+      type: WebSite
+      name: AI Tech Hub
+      url: https://ai-tech-hub.vercel.app/
+      description: Your go-to resource for AI tutorials, programming guides, and technology insights
+
+  # Robots
+  robots:
+    user_agent: "*"
+    allow:
+      - /
+    disallow:
+      - /archives/
+      - /tags/
+      - /categories/
+
+# Open Graph
+open_graph:
+  title: AI Tech Hub
+  type: website
+  url: https://ai-tech-hub.vercel.app/
+  image: /images/og-image.png
+  site_name: AI Tech Hub
+  twitter_card: summary_large_image
+  twitter_site: "@aitechhub"
+
+# Markdown plugins
+marked:
+  gfm: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+
+# Disable default RSS
+rss: /rss.xml
+
 # Deployment
 deploy:
   type: git
