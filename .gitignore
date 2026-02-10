@@ -1,2 +1,3 @@
 .github/
 scripts/deploy.sh
+.vercel
